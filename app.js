@@ -12,6 +12,13 @@ app.set("view engine", "ejs");
 app.get('/', (req, res) => {
     res.render(path.join(__dirname + '/index'));
 });
+app.get('/watch', (req, res) => {
+    res.render(path.join(__dirname + '/watch'));
+});
+// app.get('/settings.json', (req, res) => {
+//     res.render(path.join(__dirname + '/settings.json'));
+// });
+app.set("./settings.json", "json");
 
 app.listen(port, () => {
 

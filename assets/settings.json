@@ -1,0 +1,101 @@
+
+[
+    {
+        "name": "Belgium",
+        "short_name": "BE",
+        "config": [
+            {
+                "type": "site",
+                "url": "https://www.lightningmaps.org/#m=oss;t=3;s=0;o=0;b=0.00;ts=0;y=50.7886;x=3.6571;z=9;d=2;dl=2;dc=0;"
+            },
+            {
+                "type": "youtube",
+                "id": "guo8CHurCpY",
+                "url": "https://youtube.com/watch?v=ABCDEFG"
+            },
+            {
+                "type": "embed",
+                "code": "<iframe src=\"https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=8&overlay=wind&product=ecmwf&level=surface&lat=50.733&lon=3.241\" frameborder=\"0\"></iframe>"
+            }
+        ]
+    },
+    {
+        "name": "Oklahoma - US",
+        "short_name": "OK",
+        "config": [
+            {
+                "type": "site",
+                "url": "https://www.lightningmaps.org/#m=oss;t=3;s=0;o=0;b=0.00;ts=0;y=50.7886;x=3.6571;z=9;d=2;dl=2;dc=0;"
+            }
+        ]
+    },
+    {
+        "name": "Arkensas - US",
+        "short_name": "AR",
+        "config": [
+            {
+                "type": "us_weather_service"
+            },
+            {
+                "type": "empty",
+                "html": "<a href=\"https://www.youtube.com/@thv11/streams\">THV11 YT Tornado coverage</a>"
+            },
+            {
+                "type": "embed",
+                "code": "<iframe src=\"https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=6&overlay=wind&product=ecmwf&level=surface&lat=34.633&lon=-92.373\" frameborder=0></iframe>"
+            }
+        ]
+    },
+    {
+        "name": "Kansas - US",
+        "short_name": "KS",
+        "config": [
+            {
+                "type": "us_weather_service"
+            },
+            {
+                "type": "embed",
+                "code": "<iframe src=\"https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=6&overlay=wind&product=ecmwf&level=surface&lat=38.238&lon=-98.481\" frameborder=0></iframe>"
+            }
+        ]
+    },
+    {
+        "name": "North Carolina - US",
+        "short_name": "NC",
+        "config": [
+            {
+                "type": "us_weather_service"
+            },
+            {
+                "type": "embed",
+                "code": "<iframe src=\"https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=6&overlay=wind&product=ecmwf&level=surface&lat=35.353&lon=-79.629\" frameborder=0></iframe>"
+            }
+        ]
+    },
+    {
+        "name": "South Carolina - US",
+        "short_name": "SC",
+        "config": [
+            {
+                "type": "us_weather_service"
+            },
+            {
+                "type": "embed",
+                "code": "<iframe src=\"https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=6&overlay=wind&product=ecmwf&level=surface&lat=33.907&lon=-80.618\" frameborder=0></iframe>"
+            }
+        ]
+    },
+    {
+        "name": "Florida - US",
+        "short_name": "FL",
+        "config": [
+            {
+                "type": "us_weather_service"
+            },
+            {
+                "type": "embed",
+                "code": "<iframe src=\"https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=6&overlay=wind&product=ecmwf&level=surface&lat=27.761&lon=-82.837\" frameborder=0></iframe>"
+            }
+        ]
+    }
+]
