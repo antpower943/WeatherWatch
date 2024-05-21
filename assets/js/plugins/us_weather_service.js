@@ -5,6 +5,7 @@ import Plugin from './baseplugin.js';
 
 export default class US_Weather_Service extends Plugin {
     _el_alerts = null;
+    _cards = [];
 
     render() {
         // No visual rendering required
@@ -48,8 +49,43 @@ export default class US_Weather_Service extends Plugin {
         <div class="uwsa-cont">
             <div class="uwsa-title"><b>`+area+`</b></div>
             <div class="uwsa-subtitle">`+alert_type+` // `+alert_severity+`</div>
+            <div class="uwsa-info">(i)</div>
         </div>
         `;
+
+        el.querySelector('.uwsa-info').addEventListener('click', function() {
+            let output = [];
+
+            function add2output(depth, key, value) {
+                let insert_padding = '';
+                for (let i = 0; i < depth; i++) insert_padding += '&emsp;'; 
+                output.push('<p>'+insert_padding+'<b>'+key+'</b> '+value+'</p>');
+            }
+
+            function analyseObject(obj, depth = 0) {
+                Object.keys(obj).forEach(key => {
+                    let value = obj[key];
+                    if (value === null) value = 'null';
+                    if (typeof value === 'array') value = value.join(', ');
+
+                    if (typeof value === 'object') {
+                        add2output(depth, key, '');
+                        analyseObject(value, depth++);
+                    } else {
+                        add2output(depth, key, value);
+                    }
+                });
+            }
+
+            analyseObject(alert);
+
+
+            
+            let el = document.createElement('div');
+            el.id = 'uws-info'
+            el.innerHTML = '<div id="uwsi-content"><div id="uwsi-obj">'+output.join('')+'</div><button id="uwsi-close">Close</button></div>';
+            this.closest('.watch-tile').appendChild(el);
+        });
 
         this._render_el.querySelector('.uws-alerts').appendChild(el);
     }
@@ -93,7 +129,63 @@ export default class US_Weather_Service extends Plugin {
     width: calc(100% - 80px);
     top: 0px;
 }
+
+#uws-info {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background(111,111,111,0.6);
+}
+
+#uwsi-content {
+    position: absolute;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    left: 20px;
+    top: 20px;
+    background: rgb(11, 11, 11);
+
+}
+
+#uwsi-obj {
+    width: calc(100% - 10px);
+    height: calc(100% - 40px);
+    overflow-y: auto;
+    font-size: 10px;
+    padding: 5px;
+}
+
+#uwsi-obj > p {
+    margin: 0px;
+    white-space: nowrap;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#uwsi-obj > p > b {
+    color: red;
+}
         </style>
         `;
+    }
+}
+
+class Card {
+    _settings = null;
+    _data = null;
+
+    constructor(settings, data) {
+        this._settings = settings;
+        this._data = data;
+
+        this.createCard();
+    }
+
+    get type() {
+        return this._settings['type'];
+    }
+
+    createCard() {
+
     }
 }

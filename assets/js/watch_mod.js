@@ -12,10 +12,24 @@ export default class Watch {
         this.all_settings = new Settings(sett);
         this.settings = this.all_settings.getSubsettings(id);
 
+        document.getElementById('title').textContent = this.settings.name;
         // Render settings
         this.plugin_loader = new Plugin_Loader(id);
         this.settings.iterateConfigs((configItem) => {
             this.plugin_loader.load(configItem);
+        });
+
+        const watches = document.getElementById('watches');
+        sett.forEach(setting => {
+            let el = document.createElement('option');
+            el.textContent = setting.name;
+            el.value = setting.short_name;
+            watches.appendChild(el);
+            if (setting.short_name == id) watches.selectedIndex = watches.children.length-1;
+        });
+
+        watches.addEventListener('change', () => {
+            location.href = 'watch?id='+watches.children[watches.selectedIndex].value.toLowerCase();
         });
     }
 
