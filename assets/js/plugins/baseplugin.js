@@ -4,6 +4,7 @@ export default class Plugin {
     _settings = {}
     _render_el = null;
     _region = null;
+    _self = this;
 
     constructor (region, settings) {
         this._settings = settings;

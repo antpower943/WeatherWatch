@@ -2,6 +2,7 @@ body {
     margin: 0px;
     background: rgb(33,33,33);
     color: white;
+    /* zoom: 0.7; */
 }
 
 header {
@@ -17,8 +18,12 @@ article {
 }
 
 .watch-tile {
-    width: 398px;
-    height: 398px;
+    /* width: 398px;
+    height: 398px; */
+    /* width: 798px;
+    height: 798px; */
+    width: 498px;
+    height: 498px;
     border: 1px solid rgb(0, 122, 204);
     position: relative;
     float: left;
